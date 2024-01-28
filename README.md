@@ -28,4 +28,5 @@ The image file does not have to already exist. Please surround URL with quotes (
 Examples:
 
 `python make_qr.py 'https://www.google.com' google_qr.png`
+
 `python make_qr.py 'https://en.wikipedia.org/wiki/Ingenious_(board_game)' wikipedia_ingenious_qr.png`
