@@ -1,6 +1,6 @@
 import qrcode
 import sys
-from urllib.request import urlopen, URLError
+import requests
 
 def is_valid_url(url):
     """
@@ -9,9 +9,13 @@ def is_valid_url(url):
     Returns true if access succeeds, false if access fails.
     """
     try:
-        urlopen(url)
-        return True
-    except URLError:
+        response = requests.get(url)
+
+        if response.status_code != 404:
+            return True
+
+        return False
+    except requests.exceptions.InvalidURL:
         return False
 
 def main():
@@ -24,7 +28,7 @@ def main():
         sys.stderr.write(f"Received file name \"{sys.argv[2]}\" . Please make sure file name ends with \".png\"\n")
         sys.exit(1)
 
-    if is_valid_url(sys.argv[1]):
+    if not is_valid_url(sys.argv[1]):
         sys.stderr.write(f"The URL \"{sys.argv[1]}\" cannot be accessed. Please check your internet connection and your URL spelling.\n")
         sys.exit(1)
 
