@@ -13,9 +13,11 @@ Install the requirements first using this command:
 
 It is recommended to install and use this software using a virtual environment:
 
-`python -m venv .env`
-`source .env/bin/activate # source .env/Scripts/activate on Windows`
-`pip install -r requirements.txt`
+```
+python -m venv .env
+source .env/bin/activate # source .env/Scripts/activate on Windows
+pip install -r requirements.txt
+```
 
 ## Usage ##
 
@@ -27,6 +29,8 @@ The image file does not have to already exist. Please surround URL with quotes (
 
 Examples:
 
-`python make_qr.py 'https://www.google.com' google_qr.png`
+```
+python make_qr.py 'https://www.google.com' google_qr.png
 
-`python make_qr.py 'https://en.wikipedia.org/wiki/Ingenious_(board_game)' wikipedia_ingenious_qr.png`
+python make_qr.py 'https://en.wikipedia.org/wiki/Ingenious_(board_game)' wikipedia_ingenious_qr.png
+```
